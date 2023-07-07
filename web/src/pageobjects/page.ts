@@ -13,4 +13,7 @@ export default class Page {
     public open_login () {
         return browser.url(`https://www.saucedemo.com/`)
     }
+    public open_saucelabs () {
+        return browser.url(`https://saucelabs.com/`)
+    }
 }

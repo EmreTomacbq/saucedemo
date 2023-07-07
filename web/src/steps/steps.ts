@@ -3,6 +3,7 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import LoginPage from '../pageobjects/login.page.js';
 import HomePage from '../pageobjects/home.page.js';
 import NavigationPage from '../pageobjects/navigation.page.js';
+import AboutPage from '../pageobjects/about.page.js';
 
 const pages = {
     login: LoginPage
@@ -13,6 +14,12 @@ const pages = {
 });*/
 Given("I am on the login page", async () => {
     await HomePage.open_login();
+});
+Given("I am on the saucelabs page", async () => {
+    await AboutPage.open_saucelabs();
+});
+Then("I am going through saucelabs page", async () => {
+    await AboutPage.assertAboutpage();
 });
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {
     await LoginPage.login(username, password)
