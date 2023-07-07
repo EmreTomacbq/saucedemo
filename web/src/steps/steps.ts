@@ -13,10 +13,10 @@ const pages = {
     await pages[page].open()
 });*/
 Given("I am on the login page", async () => {
-    await HomePage.open_login();
+    await HomePage.open();
 });
 Given("I am on the saucelabs page", async () => {
-    await AboutPage.open_saucelabs();
+    await AboutPage.open();
 });
 Then("I am going through saucelabs page", async () => {
     await AboutPage.assertAboutpage();

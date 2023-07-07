@@ -40,25 +40,14 @@ class HomePage extends Page {
     public get addCartButton() {
         return $('.inventory_list button');
     }
-    // Footer
-    public get social() {
-        return $('.social');
-    }
-    public get socialTwitter() {
-        return $("a[href='https://twitter.com/saucelabs']");
-    }
-    public get socialFacebook() {
-        return $("a[href='https://www.facebook.com/saucelabs']");
-    }
-    public get socialLinkedin() {
-        return $("a[href='https://www.linkedin.com/company/sauce-labs/']");
-    }
-
     /* 
     *
     *   Methods
     *
     * */
+    public open () {
+        return browser.url(`https://www.saucedemo.com/`)
+    }
     async assertHomepage(){
         await browser.url('https://www.saucedemo.com/inventory.html')
         await expect(this.homeCaption).toBeExisting();
@@ -81,39 +70,6 @@ class HomePage extends Page {
         await expect(this.productImg).toBeExisting();
         await expect(this.addCartButton).toBeExisting();
     }
-    async assertFooter(){
-        await this.clickTwitterLink();
-        await this.clickFacebookLink();
-        await this.clickLinkedinLink();
-
-    }
-    async clickTwitterLink() {
-        await this.social.scrollIntoView();
-        await this.socialTwitter.waitForDisplayed();
-        await this.socialTwitter.click();
-        await this.closeNewTab();
-    }
-      async clickFacebookLink() {
-        await this.social.scrollIntoView();
-        await this.socialFacebook.waitForDisplayed();
-        await this.socialFacebook.click();
-        await this.closeNewTab();
-    }
-      async clickLinkedinLink() {
-        await this.social.scrollIntoView();
-        await this.socialLinkedin.waitForDisplayed();
-        await this.socialLinkedin.click();
-        await this.closeNewTab();
-    }
-    public async closeNewTab(): Promise<void> {
-        const handles = await browser.getWindowHandles();
-        if (handles.length > 1) {
-          await browser.switchToWindow(handles[1]);
-          await browser.closeWindow();
-          await browser.switchToWindow(handles[0]);
-        }
-    }
-
 }
 
 export default new HomePage();

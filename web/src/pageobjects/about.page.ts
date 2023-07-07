@@ -35,6 +35,9 @@ class AboutPage extends Page {
     *   Methods
     *
     * */
+    public open () {
+        return browser.url(`https://saucelabs.com/`)
+    }
     async assertTitle() {
         await expect(browser).toHaveTitleContaining(
           "Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing"
