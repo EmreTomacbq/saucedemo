@@ -72,7 +72,7 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'firefox' // or "firefox", "microsoftedge", "safari"
     }],
     //
     // ===================
@@ -123,7 +123,12 @@ export const config: Options.Testrunner = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         'chromedriver',
-        //'firefox-profile',
+        ['firefox-profile', {
+            proxy: {
+                proxyType: 'manual',
+                httpProxy: '127.0.0.1:8080'
+            }
+        }]
     ],
     
     // Framework you want to run your specs with.
@@ -146,7 +151,14 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+        }]
+    ],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.

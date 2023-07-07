@@ -2,6 +2,7 @@
   "name": "saucedemo",
   "type": "module",
   "devDependencies": {
+    "@wdio/allure-reporter": "^8.11.0",
     "@wdio/cli": "^8.11.2",
     "@wdio/cucumber-framework": "^8.11.0",
     "@wdio/firefox-profile-service": "^8.10.4",
