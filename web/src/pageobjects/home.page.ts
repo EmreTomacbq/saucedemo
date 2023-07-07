@@ -40,6 +40,9 @@ class HomePage extends Page {
     public get addCartButton() {
         return $('.inventory_list button');
     }
+    public get addCartBadge() {
+        return $('.shopping_cart_badge');
+    }
     /* 
     *
     *   Methods
@@ -53,6 +56,7 @@ class HomePage extends Page {
         await expect(this.homeCaption).toBeExisting();
         await expect(this.homeCaption).toHaveTextContaining("Products");
         await expect(this.homeFilterbar).toBeExisting();
+        await this.addCart();
     }
     async assertHeader(){
         await expect(this.headerCaption).toBeExisting();
@@ -69,6 +73,20 @@ class HomePage extends Page {
         await expect(this.productPrice).toBeExisting();
         await expect(this.productImg).toBeExisting();
         await expect(this.addCartButton).toBeExisting();
+    }
+    async addCart(){
+        const cartBadgeComponent = this.addCartBadge.waitForDisplayed();
+        const itemInCart = this.addCartButton.click;
+        (await this.addCartButton).isDisplayed;
+        (await this.addCartButton).isClickable;
+        (await this.addCartButton).click;
+        var count = 0;
+        if(cartBadgeComponent/* && itemInCart*/){
+            while(itemInCart){
+                count++;
+                await expect(this.addCartBadge).toHaveTextContaining(""+ count);              
+            }
+        }
     }
 }
 
