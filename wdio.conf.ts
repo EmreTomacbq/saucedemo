@@ -35,14 +35,14 @@ export const config: Options.Testrunner = {
     specs: [
         //'./web/feature/**/*.feature',
         //'./web/feature/**/login.feature',
-        // './web/feature/**/WEB-010.feature',
-        // './web/feature/**/WEB-011.feature',
-        // './web/feature/**/WEB-012.feature',
-         './web/feature/**/WEB-013.feature',
-        // './web/feature/**/WEB-014.feature',
-        // './web/feature/**/WEB-015.feature',
-        // './web/feature/**/WEB-016.feature',
-        //'./web/feature/**/WEB-017.feature',
+         //'./web/feature/**/WEB-010.feature',
+         './web/feature/**/WEB-011.feature',
+         //'./web/feature/**/WEB-012.feature',
+         //'./web/feature/**/WEB-013.feature',
+         //'./web/feature/**/WEB-014.feature',
+         //'./web/feature/**/WEB-015.feature',
+         //'./web/feature/**/WEB-016.feature',
+         //'./web/feature/**/WEB-017.feature',
     ],
     // Patterns to exclude.
     exclude: [
@@ -123,6 +123,14 @@ export const config: Options.Testrunner = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         'chromedriver',
+        ['performancetotal',
+        {
+            disableAppendToExistingFile: true,
+            performanceResultsFileName: "performance-results",
+            dropResultsFromFailedTest: false,
+            performanceResultsDirectory: "performance-results",
+            analyzeByBrowser: true
+        }],
         ['firefox-profile', {
             proxy: {
                 proxyType: 'manual',

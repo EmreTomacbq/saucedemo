@@ -1,0 +1,2 @@
+name,brName,avgTime,sem,repeats,minValue,maxValue,earliestTime,latestTime
+Startup,chrome,6981,0,1,6981,6981,"16.7.2023, 10:08:04","16.7.2023, 10:08:04"

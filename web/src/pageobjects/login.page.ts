@@ -35,17 +35,11 @@ class LoginPage extends Page {
     public async loginBlocked () {
         await expect(await this.blockedUser).toHaveTextContaining("Epic sadface: Sorry, this user has been locked out.");
     }
-    public async problemUser(){
-       //compare Images ID
-    }
-    public async performanceGlitchUser(){
-       //performance Test https://webdriver.io/de/docs/wdio-performancetotal-service/
-    }
     /**
      * overwrite specific options to adapt it to page object
      */
     public open () {
-        return super.open('login');
+        return super.open();
     }
 }
 

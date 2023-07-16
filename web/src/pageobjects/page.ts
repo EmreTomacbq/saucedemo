@@ -1,3 +1,4 @@
+import { performancetotal } from "wdio-performancetotal-service";
 /**
 * main page object containing all methods, selectors and functionality
 * that is shared across all page objects
@@ -22,6 +23,22 @@ export default class Page {
     */
     public open () {
         return browser.url(``)
+    }
+    public async performanceGlitchUserStart(){
+        //performance Test https://webdriver.io/de/docs/wdio-performancetotal-service/
+         performancetotal.sampleStart("Startup");
+         
+         //browser.url("https://https://github.com/EmreTomacbq/saucedemo/");
+         
+         //performancetotal.sampleEnd("Startup");
+    }
+    public async performanceGlitchUserEnd(){
+        //performance Test https://webdriver.io/de/docs/wdio-performancetotal-service/
+        // performancetotal.sampleStart("Startup");
+         
+         //browser.url("https://https://github.com/EmreTomacbq/saucedemo/");
+         
+         performancetotal.sampleEnd("Startup");
     }
     async assertFooter(){
         await this.clickTwitterLink();

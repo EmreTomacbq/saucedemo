@@ -9,4 +9,3 @@ Feature: The Internet Guinea Pig Website
   Examples:
       | username        | password             |
       | standard_user   | secret_sauce         |
-      #| foobar          | secret_sauce         |

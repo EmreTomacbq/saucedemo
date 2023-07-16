@@ -29,6 +29,7 @@ Then("I should see on Home page", async () => {
     await HomePage.assertHeader();
     await HomePage.assertProduct();
     await HomePage.assertFooter();
+    //await HomePage.compareImgTrue();
 });
 Then("I am going through the footer", async () => {
     await NavigationPage.clickMenu();
@@ -48,11 +49,14 @@ Then("Login problem User", async () => {
     await HomePage.assertHeader();
     await HomePage.assertProduct();
     await HomePage.assertFooter();
+    //await HomePage.compareImg();
 });
 Then("Login performance glitch User", async () => {
     //await LoginPage.problemUser();
+    await HomePage.performanceGlitchUserStart();
     await HomePage.assertHomepage();
     await HomePage.assertHeader();
     await HomePage.assertProduct();
     await HomePage.assertFooter();
+    await HomePage.performanceGlitchUserEnd();
 });

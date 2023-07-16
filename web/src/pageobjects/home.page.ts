@@ -1,4 +1,5 @@
 import { ChainablePromiseElement } from 'webdriverio';
+//import generator from "../../../generator";
 
 import Page from './page.js';
 
@@ -28,6 +29,7 @@ class HomePage extends Page {
     public get productCaption() {
         return $('.inventory_list .inventory_item_name');
     }
+
     public get productDescription() {
         return $('.inventory_list .inventory_item_desc');
     }
@@ -43,6 +45,9 @@ class HomePage extends Page {
     public get addCartBadge() {
         return $('.shopping_cart_badge');
     }
+    public productImgListe(imageNumber: number) {
+        return $$('item_' + imageNumber + '_img_link');
+    }
     /* 
     *
     *   Methods
@@ -56,7 +61,7 @@ class HomePage extends Page {
         await expect(this.homeCaption).toBeExisting();
         await expect(this.homeCaption).toHaveTextContaining("Products");
         await expect(this.homeFilterbar).toBeExisting();
-        await this.addCart();
+        //await this.addCart();
     }
     async assertHeader(){
         await expect(this.headerCaption).toBeExisting();
@@ -88,6 +93,22 @@ class HomePage extends Page {
             }
         }
     }
+    /*public async compareImgTrue(){ //import generator does not work properly
+        const random_image = generator.generateNumberBetween( 1, 5 );
+        if(!(this.productImgListe(random_image) == this.productImgListe(1))){
+            console.log("IMAGE EQUAL");
+        }
+    }*/
+    /*public async compareImgFalse(){ //foreach has a problem
+        const allImages = [""];
+        await this.productImgListe.forEach(async (productImgages) => {
+            allImages.push(await productImgages.getAttribute("src"));
+        });
+        const uniqueImage = Array.from(
+            new Set(allImages.map((item: string) => item))
+          );
+          await expect(allImages.length).toBe(uniqueImage.length);
+    }*/
 }
 
 export default new HomePage();

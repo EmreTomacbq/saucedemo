@@ -2,6 +2,7 @@
   "name": "saucedemo",
   "type": "module",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "@wdio/allure-reporter": "^8.11.0",
@@ -28,5 +29,8 @@
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
       "pre-commit": "echo \"[Husky] pre-commit\""
     }
+  },
+  "dependencies": {
+    "wdio-performancetotal-service": "^3.1.0"
   }
 }
