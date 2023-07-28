@@ -1,5 +1,3 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
 import Page from './page.js';
 
 /**
@@ -36,7 +34,8 @@ class AboutPage extends Page {
     *
     * */
     public open () {
-        return browser.url(`https://saucelabs.com/`)
+        // eslint-disable-next-line ui-testing/no-absolute-url
+        return browser.url(`https://saucelabs.com/`);
     }
     async assertTitle() {
         await expect(browser).toHaveTitleContaining(
@@ -48,6 +47,7 @@ class AboutPage extends Page {
         await this.assertBody();    
     }
     async assertBody(){
+        // eslint-disable-next-line ui-testing/no-hard-wait
         await browser.pause(500);
         await expect(this.aboutpageHeadline).toBeExisting();
         await expect(this.aboutpageHeadline).toHaveTextContaining("Website and mobile testingat every stage of development");

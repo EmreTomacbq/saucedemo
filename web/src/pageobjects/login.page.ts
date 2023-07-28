@@ -1,6 +1,4 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
-import Page from './page.js';
+import Page from "./page.js";
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -10,15 +8,15 @@ class LoginPage extends Page {
      * define selectors using getter methods
      */
     public get inputUsername () {
-        return $('#user-name');
+        return $("#user-name");
     }
 
     public get inputPassword () {
-        return $('#password');
+        return $("#password");
     }
 
     public get btnSubmit () {
-        return $('#login-button');
+        return $("#login-button");
     }
     public get blockedUser () {
         return $("h3[data-test='error']");
@@ -35,7 +33,8 @@ class LoginPage extends Page {
     public async loginBlocked () {
         await expect(await this.blockedUser).toHaveTextContaining("Epic sadface: Sorry, this user has been locked out.");
     }
-    public async checkMessage (message: string){
+    // @typescript-eslint/no-unused-vars
+    public async checkMessage (/^message: string_/){
         //....
 
     }
@@ -43,7 +42,7 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     public open () {
-        return super.open('');
+        return super.open("");
     }
 }
 

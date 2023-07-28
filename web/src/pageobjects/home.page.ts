@@ -1,4 +1,4 @@
-import { ChainablePromiseElement } from 'webdriverio';
+// eslint-disable-next-line ui-testing/no-unused-imports
 import generator from "../../../generator";
 
 import Page from './page.js';
@@ -58,6 +58,7 @@ class HomePage extends Page {
         return browser.url(`inventory`) //
     }
     async assertHomepage(){
+        // eslint-disable-next-line ui-testing/no-absolute-url
         await browser.url('https://www.saucedemo.com/inventory.html')
         await expect(this.homeCaption).toBeExisting();
         await expect(this.homeCaption).toHaveTextContaining("Products");

@@ -6,7 +6,7 @@ import { performancetotal } from "wdio-performancetotal-service";
 export default class Page {
     // Footer
     public get social() {
-        return $('.social');
+        return $(".social");
     }
     public get socialTwitter() {
         return $("a[href='https://twitter.com/saucelabs']");
@@ -23,7 +23,7 @@ export default class Page {
     */
    // saucedemo.com
     public open (path: string) {
-        return browser.url(`${path}`)
+        return browser.url(`${path}`);
     }
     public async performanceGlitchUserStart(){
         //performance Test https://webdriver.io/de/docs/wdio-performancetotal-service/

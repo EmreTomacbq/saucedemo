@@ -12,6 +12,8 @@
     "@wdio/spec-reporter": "^8.11.2",
     "chromedriver": "^114.0.2",
     "eslint": "^8.44.0",
+    "eslint-plugin-ui-testing": "^2.0.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
@@ -22,7 +24,8 @@
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts",
     "run-ff": "wdio run ./wdio.conf.FIREFOX.ts",
-    "report": "allure generate ./allure-results --clean && allure open"
+    "report": "allure generate ./allure-results --clean && allure open",
+    "lint": "npx eslint . --ext .ts,.tsx --max-warnings=0;"
   },
   "husky": {
     "hooks": {

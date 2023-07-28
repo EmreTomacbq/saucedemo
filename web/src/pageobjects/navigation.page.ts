@@ -1,4 +1,4 @@
-import Page from './page.js';
+import Page from "./page.js";
 
 
 class NavigationPage extends Page {
@@ -6,19 +6,19 @@ class NavigationPage extends Page {
      * define selectors using getter methods
      */
     public get menu() {
-        return $('#react-burger-menu-btn');
+        return $("#react-burger-menu-btn");
     }
     public get inventoryMenu() {
-        return $('#inventory_sidebar_link');
+        return $("#inventory_sidebar_link");
     }
     public get aboutMenu() {
-        return $('#about_sidebar_link');
+        return $("#about_sidebar_link");
     }
     public get logoutMenu() {
-        return $('#logout_sidebar_link');
+        return $("#logout_sidebar_link");
     }
     public get resetMenu() {
-        return $('#reset_sidebar_link');
+        return $("#reset_sidebar_link");
     }
 
     /* 

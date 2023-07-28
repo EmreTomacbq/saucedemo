@@ -1,13 +1,9 @@
-import { Given, When, Then } from '@wdio/cucumber-framework';
+import { Given, When, Then } from "@wdio/cucumber-framework";
 
-import LoginPage from '../pageobjects/login.page.js';
-import HomePage from '../pageobjects/home.page.js';
-import NavigationPage from '../pageobjects/navigation.page.js';
-import AboutPage from '../pageobjects/about.page.js';
-
-const pages = {
-    login: LoginPage
-}
+import LoginPage from "../pageobjects/login.page.js";
+import HomePage from "../pageobjects/home.page.js";
+import NavigationPage from "../pageobjects/navigation.page.js";
+import AboutPage from "../pageobjects/about.page.js";
 
 /*Given(/^I am on the (\w+) page$/, async (page) => {
     await pages[page].open()
@@ -22,7 +18,7 @@ Then("I am going through saucelabs page", async () => {
     await AboutPage.assertAboutpage();
 });
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {
-    await LoginPage.login(username, password)
+    await LoginPage.login(username, password);
 });
 Then("I should see on Home page", async () => {
     await HomePage.assertHomepage();
