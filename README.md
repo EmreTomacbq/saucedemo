@@ -87,3 +87,14 @@ SLint is a powerful and widely-used static code analysis tool for JavaScript. It
 npm run lint 
 
 ```
+
+# Husky
+
+Husky is a powerful Git hook manager that enables you to automate tasks and enforce quality checks before commits and pushes. With Husky, you can easily set up pre-commit and pre-push hooks to ensure that only code that meets your project's standards is committed and pushed to the repository.
+
+### Run Husky
+
+```
+npm run prepare 
+
+```

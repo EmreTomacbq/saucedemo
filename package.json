@@ -25,13 +25,12 @@
     "wdio": "wdio run ./wdio.conf.ts",
     "run-ff": "wdio run ./wdio.conf.FIREFOX.ts",
     "report": "allure generate ./allure-results --clean && allure open",
-    "lint": "npx eslint . --ext .ts,.tsx --max-warnings=0;"
+    "lint": "npx eslint . --ext .ts,.tsx --max-warnings=0;",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
+      "commit-msg": "echo \"[Husky] commit-msg\"",
       "pre-commit": "echo \"[Husky] pre-commit\""
     }
   },
