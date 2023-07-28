@@ -8,7 +8,6 @@
     "@wdio/allure-reporter": "^8.11.0",
     "@wdio/cli": "^8.11.2",
     "@wdio/cucumber-framework": "^8.11.0",
-    "@wdio/firefox-profile-service": "^8.10.4",
     "@wdio/local-runner": "^8.11.2",
     "@wdio/spec-reporter": "^8.11.2",
     "chromedriver": "^114.0.2",
@@ -16,11 +15,14 @@
     "husky": "^8.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
-    "wdio-chromedriver-service": "^8.1.1"
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-cucumberjs-json-reporter": "^5.1.6",
+    "wdio-geckodriver-service": "^5.0.1"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts",
-    "prepare": "husky install"
+    "run-ff": "wdio run ./wdio.conf.FIREFOX.ts",
+    "report": "allure generate ./allure-results --clean && allure open"
   },
   "husky": {
     "hooks": {
@@ -31,6 +33,7 @@
     }
   },
   "dependencies": {
+    "allure-commandline": "^2.23.1",
     "wdio-performancetotal-service": "^3.1.0"
   }
 }

@@ -1,5 +1,5 @@
 import { ChainablePromiseElement } from 'webdriverio';
-//import generator from "../../../generator";
+import generator from "../../../generator";
 
 import Page from './page.js';
 
@@ -53,8 +53,9 @@ class HomePage extends Page {
     *   Methods
     *
     * */
+    // saucedemo.com/inverntory
     public open () {
-        return browser.url(`https://www.saucedemo.com/`)
+        return browser.url(`inventory`) //
     }
     async assertHomepage(){
         await browser.url('https://www.saucedemo.com/inventory.html')

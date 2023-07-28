@@ -4,8 +4,10 @@ Feature: WEB-010
 
     Given I am on the login page
     When I login with <username> and <password>
+    #Then I should see login <message>
     Then I should see on Home page
 
     Examples:
-      | username      | password             |
-      | standard_user | secret_sauce         |
+      | username          | password             |  message  |
+      | standard_user     | secret_sauce         |  success   |
+      #| locked_out_user   | secret_sauce         |  failed  |

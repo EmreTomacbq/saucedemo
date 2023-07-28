@@ -35,11 +35,15 @@ class LoginPage extends Page {
     public async loginBlocked () {
         await expect(await this.blockedUser).toHaveTextContaining("Epic sadface: Sorry, this user has been locked out.");
     }
+    public async checkMessage (message: string){
+        //....
+
+    }
     /**
      * overwrite specific options to adapt it to page object
      */
     public open () {
-        return super.open();
+        return super.open('');
     }
 }
 

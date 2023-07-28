@@ -1,4 +1,5 @@
 node_modules
 allure-results
 .eslintrc.json
+performance-results
 _

@@ -43,6 +43,14 @@ Then("I logout on the saucedemo page", async () => {
 Then("Login blocked", async () => {
     await LoginPage.loginBlocked();
 });
+/*Then("I should see login {string}", async () => {
+    async function (message: string) {
+		switch (message) {
+            case 'success': {
+                await LoginPage.checkMessage(message);
+            }
+        }
+});*/
 Then("Login problem User", async () => {
     //await LoginPage.problemUser();
     await HomePage.assertHomepage();

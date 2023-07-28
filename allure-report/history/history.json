@@ -1,0 +1,1 @@
+{"9dbf2e61adeb8d5a1c172de76a0f929e":{"statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"629af74c143ccf0e","status":"broken","statusDetails":"Error: Can't call setValue on element with selector \"#user-name\" because element wasn't found","time":{"start":1690528002897,"stop":1690528013364,"duration":10467}}]}}

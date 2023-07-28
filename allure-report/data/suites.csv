@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Fri Jul 28 09:06:42 CEST 2023","Fri Jul 28 09:06:53 CEST 2023","10467","","WEB-010","","","","As a user, I am able to open and login to Saucedemo Website",""
