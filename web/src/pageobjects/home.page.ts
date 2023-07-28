@@ -55,7 +55,7 @@ class HomePage extends Page {
     * */
     // saucedemo.com/inverntory
     public open () {
-        return browser.url(`inventory`) //
+        return browser.url(``) //inventory
     }
     async assertHomepage(){
         // eslint-disable-next-line ui-testing/no-absolute-url

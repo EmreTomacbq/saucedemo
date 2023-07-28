@@ -1,32 +1,3 @@
-# User Dokumentation erstellen!
-
-# saucedemo
-# Install wdio steps
-## npm init wdio .
-
-# Run
-## npm run wdio
-
-# Installed Allrereports
-
-# Install estlint (Beschreibung des Tools)
-# ✔ How would you like to use ESLint? · problems
-# ✔ What type of modules does your project use? · esm
-# ✔ Which framework does your project use? · none
-# ✔ Does your project use TypeScript? · No / Yes
-# ✔ Where does your code run? · browser
-# ✔ What format do you want your config file to be in? · JSON
-# Local ESLint installation not found.
-# The config that you've selected requires the following dependencies:
-# @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
-# ✔ Would you like to install them now? · No / Yes
-# ✔ Which package manager do you want to use? · npm
-# Installing @typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest, eslint@latest 
-
-# Installed Husky + Husky Hooks
-
-
-------
 # WebdriverIO v8 with TypeScript v5
 This project utilizes WebdriverIO Version 8.11 in conjunction with TypeScript Version 5.11 for automated web application testing. WebdriverIO is a powerful test framework based on the WebDriver protocol, allowing tests to be executed across various browsers and platforms. TypeScript is a type-safe extension of JavaScript that facilitates the development of robust and maintainable applications.
 
@@ -50,10 +21,6 @@ Allure Reports is an open-source reporting framework designed for test automatio
 npm run report 
 
 ```
-
-### [dotenv](https://www.npmjs.com/package/dotenv) 
-
-Dotenv is a popular npm package that allows you to load environment variables from a .env file into your Node.js application. It simplifies the process of managing configuration variables, making it easier to work with sensitive data and application settings.
 
 ### Installation
 

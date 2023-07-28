@@ -57,10 +57,8 @@ Then("Login problem User", async () => {
 });
 Then("Login performance glitch User", async () => {
     //await LoginPage.problemUser();
-    await HomePage.performanceGlitchUserStart();
     await HomePage.assertHomepage();
     await HomePage.assertHeader();
     await HomePage.assertProduct();
     await HomePage.assertFooter();
-    await HomePage.performanceGlitchUserEnd();
 });

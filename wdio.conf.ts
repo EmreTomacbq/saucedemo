@@ -37,7 +37,7 @@ export const config: Options.Testrunner = {
     specs: [
         //'./web/feature/**/*.feature',
         //'./web/feature/**/*.feature',
-        './web/feature/**/WEB-010.feature',
+        './web/feature/cim_suite/WEB-010.feature',
          //'./web/feature/**/WEB-011.feature',
          //'./web/feature/**/WEB-012.feature',
          //'./web/feature/**/WEB-013.feature',
@@ -124,15 +124,7 @@ export const config: Options.Testrunner = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        'chromedriver',
-        ['performancetotal',
-        {
-            disableAppendToExistingFile: true,
-            performanceResultsFileName: "performance-results",
-            dropResultsFromFailedTest: false,
-            performanceResultsDirectory: "performance-results",
-            analyzeByBrowser: true
-        }],
+        'chromedriver'
     ],
     
     // Framework you want to run your specs with.

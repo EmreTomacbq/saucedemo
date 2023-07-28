@@ -34,9 +34,9 @@ class LoginPage extends Page {
         await expect(await this.blockedUser).toHaveTextContaining("Epic sadface: Sorry, this user has been locked out.");
     }
     // @typescript-eslint/no-unused-vars
-    public async checkMessage (message: string){
+    public async checkMessage (message?: string){
         //....
-
+        console.log(message);
     }
     /**
      * overwrite specific options to adapt it to page object
