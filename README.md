@@ -71,6 +71,19 @@ npm run wdio
 
 ```
 
+# Eslint
 
-//"prepare": "husky install",
-//"lint": "npx eslint . --ext .ts,.tsx --max-warnings=0;",
+SLint is a powerful and widely-used static code analysis tool for JavaScript. It helps developers maintain code quality, identify and fix potential issues, and enforce coding standards and best practices. ESLint is highly configurable, making it adaptable to various project requirements and coding styles.
+
+- Detect and report syntax errors and potential issues in JavaScript code.
+- Extensive set of built-in rules and ability to configure custom rules.
+- Support for ECMAScript standards (ES5, ES6, ES7, etc.).
+- Integrates seamlessly with popular code editors and build tools.
+- Large community and ecosystem with plugins and presets for specific frameworks and environments.
+
+### Run Eslint
+
+```
+npm run lint 
+
+```
