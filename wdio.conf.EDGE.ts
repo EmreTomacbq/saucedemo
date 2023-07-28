@@ -34,8 +34,8 @@ export const config: Options.Testrunner = {
     //
     specs: [
         //'./web/feature/**/*.feature',
-        './web/feature/**/*.feature',
-         //'./web/feature/**/WEB-010.feature',
+        //'./web/feature/**/*.feature',
+         './web/feature/**/WEB-010.feature',
          //'./web/feature/**/WEB-011.feature',
          //'./web/feature/**/WEB-012.feature',
          //'./web/feature/**/WEB-013.feature',
@@ -72,7 +72,7 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'microsoftedge' // or "firefox", "microsoftedge", "safari"
     }],
     //
     // ===================
@@ -131,12 +131,6 @@ export const config: Options.Testrunner = {
             performanceResultsDirectory: "performance-results",
             analyzeByBrowser: true
         }],
-        ['firefox-profile', {
-            proxy: {
-                proxyType: 'manual',
-                httpProxy: '127.0.0.1:8080'
-            }
-        }]
     ],
     
     // Framework you want to run your specs with.

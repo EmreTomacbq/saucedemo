@@ -34,8 +34,8 @@ export const config: Options.Testrunner = {
     //
     specs: [
         //'./web/feature/**/*.feature',
-        './web/feature/**/*.feature',
-         //'./web/feature/**/WEB-010.feature',
+        //'./web/feature/**/*.feature',
+         './web/feature/**/WEB-010.feature',
          //'./web/feature/**/WEB-011.feature',
          //'./web/feature/**/WEB-012.feature',
          //'./web/feature/**/WEB-013.feature',
