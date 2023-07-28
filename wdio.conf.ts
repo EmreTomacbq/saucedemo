@@ -1,5 +1,7 @@
 import type { Options } from '@wdio/types'
 
+import cucumberJson from 'wdio-cucumberjs-json-reporter';
+
 export const config: Options.Testrunner = {
     //
     // ====================
@@ -34,9 +36,9 @@ export const config: Options.Testrunner = {
     //
     specs: [
         //'./web/feature/**/*.feature',
-        //'./web/feature/**/login.feature',
-         //'./web/feature/**/WEB-010.feature',
-         './web/feature/**/WEB-011.feature',
+        //'./web/feature/**/*.feature',
+        './web/feature/**/WEB-010.feature',
+         //'./web/feature/**/WEB-011.feature',
          //'./web/feature/**/WEB-012.feature',
          //'./web/feature/**/WEB-013.feature',
          //'./web/feature/**/WEB-014.feature',
@@ -131,12 +133,6 @@ export const config: Options.Testrunner = {
             performanceResultsDirectory: "performance-results",
             analyzeByBrowser: true
         }],
-        ['firefox-profile', {
-            proxy: {
-                proxyType: 'manual',
-                httpProxy: '127.0.0.1:8080'
-            }
-        }]
     ],
     
     // Framework you want to run your specs with.
@@ -164,8 +160,16 @@ export const config: Options.Testrunner = {
         ['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
-        }]
+            disableWebdriverScreenshotsReporting: false,
+            useCucumberStepReporter: true,
+        }],
+        [
+			'cucumberjs-json',
+			{
+				jsonFolder: 'json-reports/',
+				language: 'en',
+			},
+		],
     ],
 
     //
@@ -359,4 +363,24 @@ export const config: Options.Testrunner = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
+
+    /**
+	 *
+	 * Runs after a Cucumber Step.
+	 * @param {Pickle.IPickleStep} step             step data
+	 * @param {IPickle}            scenario         scenario pickle
+	 * @param {Object}             result           results object containing scenario results
+	 * @param {boolean}            result.passed    true if scenario has passed
+	 * @param {string}             result.error     error stack if scenario failed
+	 * @param {number}             result.duration  duration of scenario in milliseconds
+     * @param {Object}             context          Cucumber World object
+	 */
+
+
+	afterStep: async function (step, scenario, result) {
+		if (!result.passed) {
+			// Attach a screenshot in a before hook
+			await cucumberJson.attach(await browser.takeScreenshot(), 'image/png');
+		}
+	},
 }
